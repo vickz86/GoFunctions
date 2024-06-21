@@ -66,8 +66,8 @@ func AddToSliceUnder(theSlice []int, maxVal int) []int {
 	return theSlice
 }
 
-// AvergeSliceInt : get the average of the slice , return float with .1 precision
-func AvergeSliceInt(theSlice []int) float64 {
+// AverageSliceInt : get the average of the slice , return float with .1 precision
+func AverageSliceInt(theSlice []int) float64 {
 	//variable
 	lenSlice := float64(len(theSlice))
 	var theSum int = 0
