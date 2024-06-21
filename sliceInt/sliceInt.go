@@ -62,3 +62,7 @@ func AddToSliceUnder(theSlice []int, maxVal int) []int {
 	//return slice with appended new slice
 	return theSlice
 }
+
+func PrintFirstElem(theSlice []int) {
+	fmt.Println(theSlice[0])
+}
