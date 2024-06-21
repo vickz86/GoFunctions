@@ -2,7 +2,7 @@ package sliceint
 
 import "fmt"
 
-// if len(sliceInt<fulldisplay) display all , else  display first ,last and middle
+// DisplaySliceInt: if len(sliceInt<fulldisplay) display all , else  display first ,last and middle
 func DisplaySliceInt(sliceInt []int, fullDisplay int) {
 
 	//varianle
