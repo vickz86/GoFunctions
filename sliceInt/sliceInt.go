@@ -23,7 +23,7 @@ func DisplaySliceInt(sliceInt []int, fullDisplay int) {
 	}
 }
 
-// AddToSliceUnder: add int to the slice , value must be under maxVal
+// AddToSliceUnder: add int to the slice , value must be under maxVal , -1 to exit
 func AddToSliceUnder(theSlice []int, maxVal int) []int {
 
 	//variable
@@ -61,8 +61,4 @@ func AddToSliceUnder(theSlice []int, maxVal int) []int {
 
 	//return slice with appended new slice
 	return theSlice
-}
-
-func PrintFirstElem(theSlice []int) {
-	fmt.Println(theSlice[0])
 }
