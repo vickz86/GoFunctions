@@ -2,8 +2,8 @@ package sliceint
 
 import "fmt"
 
+// if len(sliceInt<fulldisplay) display all , else  display first ,last and middle
 func DisplaySliceInt(sliceInt []int, fullDisplay int) {
-	//if len of sliceInt<fulldisplay display all , otherwisw display first ,last and middle
 
 	//varianle
 	lenSl := len(sliceInt)
