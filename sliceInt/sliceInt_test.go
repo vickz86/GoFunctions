@@ -6,9 +6,9 @@ import (
 )
 
 func TestAvergeSliceInt(t *testing.T) {
-	testSlice := []int{2, 2}
+	testSlice := []int{3, 5, 3}
 	whatGot := AvergeSliceInt(testSlice)
-	whatWant := 2.0
+	whatWant := 3.7
 	if whatGot == whatWant {
 		fmt.Println("succes of test")
 	} else {

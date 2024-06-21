@@ -1,6 +1,9 @@
 package sliceint
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 // DisplaySliceInt: if len(sliceInt)<fulldisplay display all , else  display first ,last and middle
 func DisplaySliceInt(sliceInt []int, fullDisplay int) {
@@ -78,6 +81,12 @@ func AvergeSliceInt(theSlice []int) float64 {
 
 	ave := SumFl / lenSlice
 
+	//convert result to .1 precision float
+	ave *= 10
+	ave = math.Round(ave)
+	ave /= 10
+
+	//return final value
 	return ave
 
 }
