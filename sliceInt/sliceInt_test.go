@@ -18,16 +18,17 @@ func TestAvergeSliceInt(t *testing.T) {
 
 }
 
-func TestGetNumberAbove(t *testing.T) {
-	testSlice := []int{6, 12, 8, 9, 14, 18}
-
-	got := GetNumberAbove(testSlice, 10)
-	var want = []int{12, 14, 18}
-	isEqual := slices.Equal(got, want)
+func TestDeleteFirstOrLastSlice(t *testing.T) {
+	var testSlice = []int{2, 4, 6, 8}
+	want := []int{2, 4, 6}
+	got := DeleteFirstOrLastSlice(testSlice, 1)
+	//check if equal
+	isEqual := slices.Equal(want, got)
+	//print result
 	if isEqual {
-		fmt.Println("succes of test")
+		fmt.Println("test has passed")
 	} else {
-		fmt.Printf("error: got %v , wanted %v", got, want)
+		fmt.Printf("got:%v and wanted %v", got, want)
 	}
 
 }
