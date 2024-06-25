@@ -150,3 +150,51 @@ func RemoveStartEndSlice(sliceInt []int, startEnd, nbtoRemove int) []int {
 	return sliceToReturn
 
 }
+
+// ResizeSlice : resize sliceInt by remocing same numbers at beginning and end of the slice
+// if number to remive is not even , it will remove more at beginning of the slice
+func ResizeSlice(sliceInt []int, resizeSize int) []int {
+	//Variable
+
+	var isEven bool
+
+	var temp1 []int
+	var temp2 []int
+
+	//get the total numbers to remove
+	toRemove := len(sliceInt) - resizeSize
+	// if negative , error
+	if toRemove < 0 {
+		fmt.Printf("error! your slice is lower than %d\n", resizeSize)
+		return sliceInt
+	}
+
+	//create final return slice
+	returnSlice := make([]int, resizeSize)
+
+	//if to remove is even , remove same beginning and end
+	if toRemove%2 == 0 {
+		isEven = true
+	}
+
+	//create newslice
+	if isEven {
+		//removeAtStart
+		temp1 = RemoveStartEndSlice(sliceInt, 0, toRemove/2)
+		fmt.Println(temp1)
+		temp2 = RemoveStartEndSlice(temp1, 1, toRemove/2)
+		fmt.Println(temp2)
+
+	} else {
+		temp1 = RemoveStartEndSlice(sliceInt, 0, (toRemove/2)+1)
+		//fmt.Println(temp1)
+		temp2 = RemoveStartEndSlice(temp1, 1, toRemove/2)
+	}
+
+	//copy to a new slice
+	copy(returnSlice, temp2)
+
+	//return returnSlice
+	return returnSlice
+
+}

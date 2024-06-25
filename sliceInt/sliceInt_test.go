@@ -46,3 +46,18 @@ func TestRemoveStartEndSlice(t *testing.T) {
 	}
 
 }
+
+func TestResizeSlice(t *testing.T) {
+	var testSliceInt = []int{2, 4, 6, 8, 10, 12, 14, 16}
+	want := []int{4, 6, 8, 10, 12, 14}
+	got := ResizeSlice(testSliceInt, 6)
+	isEqual := slices.Equal(want, got)
+	//print result
+	if isEqual {
+		fmt.Println("test has passed")
+	} else {
+		fmt.Printf("error for test ResizeSliceInt\n")
+		fmt.Printf("got:%v and wanted %v", got, want)
+	}
+
+}
