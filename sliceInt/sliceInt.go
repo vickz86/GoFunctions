@@ -103,5 +103,29 @@ func GetNumberAbove(theSlice []int, aboveNb int) []int {
 	}
 
 	return returnSlice
+}
+
+// DeleteFirstOrLastSlice . delete last or first of slice of int : 0 for first , 1 for last
+func DeleteFirstOrLastSlice(sliceInt []int, firstLast int) []int {
+	//create a new slice which len = len(sliceInt)-1
+	returnSlice := make([]int, len(sliceInt)-1)
+
+	//define new slice
+	var newSlice []int
+
+	//create new slice slice
+	if firstLast == 0 {
+		//use slicing to remove first element of the slice
+		newSlice = sliceInt[1:]
+	} else if firstLast == 1 {
+		//use slicing to remove last element of the slice
+		newSlice = sliceInt[:len(sliceInt)-1]
+	}
+
+	//copy slice to returnslice
+	copy(returnSlice, newSlice)
+
+	//return copy slice
+	return returnSlice
 
 }
