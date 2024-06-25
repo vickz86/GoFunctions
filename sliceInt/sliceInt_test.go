@@ -32,3 +32,17 @@ func TestDeleteFirstOrLastSlice(t *testing.T) {
 	}
 
 }
+
+func TestRemoveStartEndSlice(t *testing.T) {
+	var testSliceInt = []int{2, 4, 6, 8, 10, 12, 14}
+	want := []int{2, 4, 6, 8}
+	got := RemoveStartEndSlice(testSliceInt, 1, 3)
+	isEqual := slices.Equal(want, got)
+	//print result
+	if isEqual {
+		fmt.Println("test has passed")
+	} else {
+		fmt.Printf("got:%v and wanted %v", got, want)
+	}
+
+}

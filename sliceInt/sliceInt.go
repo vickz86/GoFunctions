@@ -129,3 +129,24 @@ func DeleteFirstOrLastSlice(sliceInt []int, firstLast int) []int {
 	return returnSlice
 
 }
+
+// RemoveStartEndSlice : remove element from slice int at either start or end of slice : 0 for start and 1 for end
+func RemoveStartEndSlice(sliceInt []int, startEnd, nbtoRemove int) []int {
+	//slice to return at the end, make sure has correct lenght
+	sliceToReturn := make([]int, len(sliceInt)-nbtoRemove)
+	// slice of slice
+	var newSlice []int
+
+	//remove at beginning
+	if startEnd == 0 {
+		newSlice = sliceInt[nbtoRemove:]
+	} else /* remove at the end */ {
+		newSlice = sliceInt[:len(sliceInt)-nbtoRemove]
+	}
+
+	//copy the result slice to a new slice
+	copy(sliceToReturn, newSlice)
+
+	return sliceToReturn
+
+}
