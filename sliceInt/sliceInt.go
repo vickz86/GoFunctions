@@ -88,5 +88,20 @@ func AverageSliceInt(theSlice []int) float64 {
 
 	//return final value
 	return ave
+}
+
+// GetNumberAbove : return a slice with all the number is slice above aboveNb
+func GetNumberAbove(theSlice []int, aboveNb int) []int {
+	var returnSlice []int
+
+	// if number is above append to returnSlice
+	for _, nb := range theSlice {
+		if nb > aboveNb {
+			returnSlice = append(returnSlice, nb)
+		}
+
+	}
+
+	return returnSlice
 
 }
