@@ -181,9 +181,7 @@ func ResizeSlice(sliceInt []int, resizeSize int) []int {
 	if isEven {
 		//removeAtStart
 		temp1 = RemoveStartEndSlice(sliceInt, 0, toRemove/2)
-		fmt.Println(temp1)
 		temp2 = RemoveStartEndSlice(temp1, 1, toRemove/2)
-		fmt.Println(temp2)
 
 	} else {
 		temp1 = RemoveStartEndSlice(sliceInt, 0, (toRemove/2)+1)

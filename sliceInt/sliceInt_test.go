@@ -49,8 +49,8 @@ func TestRemoveStartEndSlice(t *testing.T) {
 
 func TestResizeSlice(t *testing.T) {
 	var testSliceInt = []int{2, 4, 6, 8, 10, 12, 14, 16}
-	want := []int{4, 6, 8, 10, 12, 14}
-	got := ResizeSlice(testSliceInt, 6)
+	want := []int{6, 8, 10, 12, 14}
+	got := ResizeSlice(testSliceInt, 5)
 	isEqual := slices.Equal(want, got)
 	//print result
 	if isEqual {
