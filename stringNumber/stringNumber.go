@@ -1,12 +1,11 @@
 package stringnumber
 
 import (
-	"fmt"
 	"unicode"
 )
 
 // SliceIndexConnectedNumbers : return first and last index of connected letter => ab101ab54 :[2,4]
-func SliceIndexConnectedNumbers(theString string) /*  []int */ {
+func SliceIndexConnectedNumbers(theString string) []int {
 	//variable
 
 	// return slice int
@@ -37,7 +36,6 @@ func SliceIndexConnectedNumbers(theString string) /*  []int */ {
 
 	}
 
-	fmt.Printf("slice is %v \n", sliceInt)
-	fmt.Printf("returnSlice is %v \n", returnSliceInt)
+	return returnSliceInt
 
 }
