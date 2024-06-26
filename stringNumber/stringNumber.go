@@ -4,7 +4,7 @@ import (
 	"unicode"
 )
 
-// SliceIndexConnectedNumbers : return first and last index of connected letter => ab101ab54 :[2,4]
+// SliceIndexConnectedNumbers : return first and last index of connected letter => ab101ab54 =[2,4]
 func SliceIndexConnectedNumbers(theString string) []int {
 	//variable
 
@@ -37,5 +37,24 @@ func SliceIndexConnectedNumbers(theString string) []int {
 	}
 
 	return returnSliceInt
+
+}
+
+// GetStringBeforeAfterIndex , return the string before or after a specifc index : 0 =>before , 1 => after
+func GetStringBeforeAfterIndex(theString string, theIndex, beforeAfter int) string {
+	// variable
+	var newString string
+
+	//get the sublice before the inde
+	if beforeAfter == 0 {
+		newString = theString[:theIndex]
+
+	} else /* get after */ {
+		newString = theString[theIndex+1:]
+
+	}
+
+	//return new string
+	return newString
 
 }

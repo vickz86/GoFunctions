@@ -19,6 +19,17 @@ func TestSliceIndexConnectedNumbers(t *testing.T) {
 		fmt.Printf("error!want:%v and got %v", want, got)
 	}
 
-	SliceIndexConnectedNumbers(theString2)
+}
+
+func TestGetStringBeforeAfterIndex(t *testing.T) {
+	var testString = "test55phrase"
+
+	want := "test"
+	got := GetStringBeforeAfterIndex(testString, 4, 0)
+	if want == got {
+		fmt.Println("working!")
+	} else {
+		fmt.Printf("error!want:%v and got %v", want, got)
+	}
 
 }
