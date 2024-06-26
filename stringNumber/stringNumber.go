@@ -1,6 +1,7 @@
 package stringnumber
 
 import (
+	"fmt"
 	"unicode"
 )
 
@@ -56,5 +57,33 @@ func GetStringBeforeAfterIndex(theString string, theIndex, beforeAfter int) stri
 
 	//return new string
 	return newString
+
+}
+
+// GetStringBetweenslice : get string between element of slice
+// if len slice is 0  => error
+// if len slice is 1  => return single character
+// if len slice == 2  => "ab12ab" : "12"
+// if bigger than 2 , error
+func GetStringBetweenslice(theString string, sliceIndex []int) string {
+	//variable
+	var returnString string
+
+	//if slice is 0 or bigger than 2 => error
+	if len(sliceIndex) == 0 || len(sliceIndex) > 2 {
+		fmt.Println("error! not correct number of element is slice")
+		return ""
+	}
+
+	//if slice is 1 return 1 string
+	if len(sliceIndex) == 1 {
+		returnString = string(theString[sliceIndex[0]])
+
+	} else /* slice based on 2 element in slice */ {
+		returnString = theString[sliceIndex[0]:(sliceIndex[1] + 1)]
+
+	}
+
+	return returnString
 
 }

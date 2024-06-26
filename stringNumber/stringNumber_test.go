@@ -33,3 +33,23 @@ func TestGetStringBeforeAfterIndex(t *testing.T) {
 	}
 
 }
+
+func TestGetStringBetweenslice(t *testing.T) {
+	// var testString = "test555phrase"
+	// var theSlice = []int{4, 6}
+
+	// var testString2 = "mama1ma"
+	// var theSlice2 = []int{4}
+
+	var testString3 = "ubba00100chaka"
+	var theSlice3 = []int{4, 8}
+
+	want := "00100"
+	got := GetStringBetweenslice(testString3, theSlice3)
+	if want == got {
+		fmt.Println("working!")
+	} else {
+		fmt.Printf("error!want:%v and got %v", want, got)
+	}
+
+}
