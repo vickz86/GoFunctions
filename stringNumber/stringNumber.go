@@ -49,8 +49,6 @@ func SliceIndexConnectedNumbers(theString string) []int {
 
 	}
 
-	fmt.Println(sliceInt2)
-
 	//if sliceInt2 > 2 , only keep first and last
 	returnSliceInt = sliceint.KeepFirstLastSlice(sliceInt2)
 
@@ -139,13 +137,9 @@ func AddToIntStringInString(inString string, toAdd int) string {
 		return ""
 	}
 
-	fmt.Println(sliceInt)
-
 	//create a before and after string using GetStringBeforeAfter
 	beforeStr := GetStringBeforeAfterIndex(inString, sliceInt[0], 0)
-	fmt.Println("before is", beforeStr)
 	afterStr := GetStringBeforeAfterIndex(inString, sliceInt[len(sliceInt)-1], 1)
-	fmt.Println("after is", afterStr)
 
 	//create a string for the int
 	stringInt := GetStringBetweenslice(inString, sliceInt)
@@ -160,8 +154,6 @@ func AddToIntStringInString(inString string, toAdd int) string {
 	finalString := beforeStr + intBackString + afterStr
 
 	//return finalstring
-	fmt.Println(finalString)
-
 	return finalString
 
 }

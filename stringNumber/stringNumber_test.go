@@ -67,14 +67,14 @@ func TestStringToInt(t *testing.T) {
 }
 
 func TestAddToIntStringInString(t *testing.T) {
-	// want := 12
+	var testString = "test123in45"
+	want := "test126in45"
 
-	/* got := */
-	AddToIntStringInString("bu123da", 1)
-	/*
-		if want == got {
-			fmt.Println("StringToInt has passed")
-		} else {
-			fmt.Printf("error StringToInt , got %v ,want %v", got, want)
-		} */
+	got := AddToIntStringInString(testString, 3)
+
+	if want == got {
+		fmt.Println("AddToIntStringInString has passed")
+	} else {
+		fmt.Printf("error StringToInt , got %v ,want %v", got, want)
+	}
 }
