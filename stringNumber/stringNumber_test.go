@@ -8,9 +8,9 @@ import (
 
 func TestSliceIndexConnectedNumbers(t *testing.T) {
 	// var theString = "hello128baby545mama"
-	var theString2 = "ba987cd456"
+	var theString2 = "ba9876cd456"
 
-	want := []int{2, 3, 4}
+	want := []int{2, 5}
 	got := SliceIndexConnectedNumbers(theString2)
 
 	if slices.Equal(want, got) {
@@ -70,7 +70,7 @@ func TestAddToIntStringInString(t *testing.T) {
 	// want := 12
 
 	/* got := */
-	AddToIntStringInString("bu123da", 0)
+	AddToIntStringInString("bu123da", 1)
 	/*
 		if want == got {
 			fmt.Println("StringToInt has passed")

@@ -10,11 +10,14 @@ import (
 func SliceIndexConnectedNumbers(theString string) []int {
 	//variable
 
-	// return slice int
-	var returnSliceInt []int
+	//  slice int with connected first number
+	var sliceInt2 []int
 
 	// get the index of all the number in the string
 	var sliceInt []int
+
+	//return slice Int
+	var returnSliceInt = []int{}
 
 	//loop through all rune of the string , get all index of numbers
 	for index, letter := range theString {
@@ -24,18 +27,34 @@ func SliceIndexConnectedNumbers(theString string) []int {
 
 	}
 
+	//if sliceInt == 0 : no numbers print error and return 0
+	if len(sliceInt) == 0 {
+		fmt.Println("No number in inputed string")
+		return []int{}
+	}
+
 	//loop through sliceInt slice and add only numbers if there are next in numbers
 	for index, number := range sliceInt {
 		// add first number
 		if index == 0 {
-			returnSliceInt = append(returnSliceInt, number)
+			sliceInt2 = append(sliceInt2, number)
 			continue
 		} else if /* check if next index is separated by one */ (number - 1) == sliceInt[index-1] {
-			returnSliceInt = append(returnSliceInt, number)
+			sliceInt2 = append(sliceInt2, number)
 		} else {
 			break
 		}
 
+	}
+
+	fmt.Println(sliceInt2)
+
+	//if return len(sliceInt2)>2 , only keep first and last
+	if len(sliceInt2) > 2 {
+		returnSliceInt[0] = sliceInt2[0]
+		returnSliceInt[1] = sliceInt2[len(sliceInt2)-1]
+	} else {
+		returnSliceInt = sliceInt2
 	}
 
 	return returnSliceInt
@@ -123,8 +142,29 @@ func AddToIntStringInString(inString string, toAdd int) string {
 		return ""
 	}
 
+	fmt.Println(sliceInt)
+
 	//create a before and after string using GetStringBeforeAfter
 	beforeStr := GetStringBeforeAfterIndex(inString, sliceInt[0], 0)
 	fmt.Println("before is", beforeStr)
+	afterStr := GetStringBeforeAfterIndex(inString, sliceInt[len(sliceInt)-1], 1)
+	fmt.Println("after is", afterStr)
+
+	//create a string for the int
+	stringInt := GetStringBetweenslice(inString, sliceInt)
+
+	//convert to int and add , using StringToInt function
+	newInt := StringToInt(stringInt, toAdd)
+
+	//convert to string newInt
+	intBackString := strconv.Itoa(newInt)
+
+	//create the final string
+	finalString := beforeStr + intBackString + afterStr
+
+	//return finalstring
+	fmt.Println(finalString)
+
+	return finalString
 
 }
