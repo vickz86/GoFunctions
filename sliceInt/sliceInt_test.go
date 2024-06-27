@@ -61,3 +61,16 @@ func TestResizeSlice(t *testing.T) {
 	}
 
 }
+
+func TestKeepFirstLastSlice(t *testing.T) {
+	var test = []int{2, 3, 4, 5, 	6}
+	got := KeepFirstLastSlice(test)
+	want := []int{2, 6}
+
+	if slices.Equal(got, want) {
+		fmt.Println("KeepFirstLastSlice has passed")
+	} else {
+		fmt.Printf("want %v , got %v", want, got)
+	}
+
+}

@@ -196,3 +196,26 @@ func ResizeSlice(sliceInt []int, resizeSize int) []int {
 	return returnSlice
 
 }
+
+// KeepFirstLastSlice : keep first and last element of slice
+func KeepFirstLastSlice(sliceInt []int) []int {
+	var ReturnSlice []int
+
+	//if len is 1 , return it
+	if len(sliceInt) == 1 {
+		fmt.Println("careful! one element in the slice")
+		return sliceInt
+	} else if len(sliceInt) == 2 /* if len is 2 , return it */ {
+		return sliceInt
+	} else /* loop append first and last */ {
+		for index, element := range sliceInt {
+			if index == 0 || index == (len(sliceInt)-1) {
+				ReturnSlice = append(ReturnSlice, element)
+			}
+
+		}
+
+	}
+	return ReturnSlice
+
+}

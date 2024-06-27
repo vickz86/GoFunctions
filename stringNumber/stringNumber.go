@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strconv"
 	"unicode"
+
+	sliceint "github.com/vickz86/GoFunctions/sliceInt"
 )
 
 // SliceIndexConnectedNumbers : return first and last index of connected letter => ab101ab54 =[2,4]
@@ -49,13 +51,8 @@ func SliceIndexConnectedNumbers(theString string) []int {
 
 	fmt.Println(sliceInt2)
 
-	//if return len(sliceInt2)>2 , only keep first and last
-	if len(sliceInt2) > 2 {
-		returnSliceInt[0] = sliceInt2[0]
-		returnSliceInt[1] = sliceInt2[len(sliceInt2)-1]
-	} else {
-		returnSliceInt = sliceInt2
-	}
+	//if sliceInt2 > 2 , only keep first and last
+	returnSliceInt = sliceint.KeepFirstLastSlice(sliceInt2)
 
 	return returnSliceInt
 
@@ -130,7 +127,7 @@ func StringToInt(stringInt string, toAdd int) int {
 //------COMBINE PREVIOUS FUNCTION-------//
 
 // AddToIntStringInString : add an amount to first grourp
-// of conneccted number in a string
+// of connected number in a string
 // example : all17boa  -> all18boa
 func AddToIntStringInString(inString string, toAdd int) string {
 
