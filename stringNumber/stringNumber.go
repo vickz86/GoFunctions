@@ -2,6 +2,7 @@ package stringnumber
 
 import (
 	"fmt"
+	"strconv"
 	"unicode"
 )
 
@@ -85,5 +86,45 @@ func GetStringBetweenslice(theString string, sliceIndex []int) string {
 	}
 
 	return returnString
+
+}
+
+// StringToInt : convert a string to an int
+// add toAdd to the newly created int
+func StringToInt(stringInt string, toAdd int) int {
+
+	//convert input string to newInt
+	newInt, err := strconv.Atoi(stringInt)
+	//check if error
+	if err != nil {
+		fmt.Println("Error with input String!")
+	}
+
+	//add to newInt toAdd int
+	newInt += toAdd
+
+	//return
+	return newInt
+
+}
+
+//------COMBINE PREVIOUS FUNCTION-------//
+
+// AddToIntStringInString : add an amount to first grourp
+// of conneccted number in a string
+// example : all17boa  -> all18boa
+func AddToIntStringInString(inString string, toAdd int) string {
+
+	// first get slice of first int in string
+	sliceInt := SliceIndexConnectedNumbers(inString)
+	//if len sliceInt is 0 , print it and return 0
+	if len(sliceInt) == 0 {
+		fmt.Println("not number is string!")
+		return ""
+	}
+
+	//create a before and after string using GetStringBeforeAfter
+	beforeStr := GetStringBeforeAfterIndex(inString, sliceInt[0], 0)
+	fmt.Println("before is", beforeStr)
 
 }

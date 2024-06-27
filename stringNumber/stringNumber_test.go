@@ -53,3 +53,28 @@ func TestGetStringBetweenslice(t *testing.T) {
 	}
 
 }
+
+func TestStringToInt(t *testing.T) {
+	want := 12
+
+	got := StringToInt("10", 2)
+
+	if want == got {
+		fmt.Println("StringToInt has passed")
+	} else {
+		fmt.Printf("error StringToInt , got %v ,want %v", got, want)
+	}
+}
+
+func TestAddToIntStringInString(t *testing.T) {
+	// want := 12
+
+	/* got := */
+	AddToIntStringInString("bu123da", 0)
+	/*
+		if want == got {
+			fmt.Println("StringToInt has passed")
+		} else {
+			fmt.Printf("error StringToInt , got %v ,want %v", got, want)
+		} */
+}
