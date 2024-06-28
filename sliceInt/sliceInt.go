@@ -27,12 +27,13 @@ func DisplaySliceInt(sliceInt []int, fullDisplay int) {
 }
 
 // AddToSliceUnder: add int to the slice , value must be under maxVal , -1 to exit
-func AddToSliceUnder(theSlice []int, maxVal int) []int {
+// return a slice of int
+func AddToSliceUnder(theSlice []int, maxVal int, addToWhat string) []int {
 
 	//variable
 	var intToAdd int
 	var sliceToAdd []int
-	var stringPrint = fmt.Sprintf("type int to add\n-1 to stop adding\nint must be <= %d", maxVal)
+	var stringPrint = fmt.Sprintf("type int to add to %s\n-1 to stop adding\nint must be <= %d", addToWhat, maxVal)
 
 	//add input int to sliceToAdd
 	for {
