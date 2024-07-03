@@ -220,3 +220,14 @@ func KeepFirstLastSlice(sliceInt []int) []int {
 	return ReturnSlice
 
 }
+
+// SumSlice:  return sum of the slice
+func SumSlice(sliceInt []int) int {
+	var sum int
+
+	for _, nb := range sliceInt {
+		sum += nb
+	}
+	return sum
+
+}

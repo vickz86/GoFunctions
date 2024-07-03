@@ -74,3 +74,16 @@ func TestKeepFirstLastSlice(t *testing.T) {
 	}
 
 }
+
+func TestSumSlice(t *testing.T) {
+	var test = []int{2, 3, 4}
+	got := SumSlice(test)
+	want := 10
+
+	if got == want {
+		fmt.Println("SumSlice has passed")
+	} else {
+		fmt.Printf("error ,want %v , got %v", want, got)
+	}
+
+}

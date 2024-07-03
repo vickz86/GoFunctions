@@ -5,7 +5,7 @@ import (
 	"slices"
 )
 
-// CheckTypeInSlice : check what you type is in the slice of string ,it will return it
+// CheckTypeInSlice : check what you type is in the slice of string ,it will return it.
 // toPrint parameter will print description of the slice
 func CheckTypeInSlice(sliceToCheck []string, toPrint string) string {
 	var inputString string

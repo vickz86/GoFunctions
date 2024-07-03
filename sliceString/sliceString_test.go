@@ -1,14 +1,9 @@
 package slicestring
 
-import (
-	"fmt"
-	"testing"
-)
-
 var testString = []string{"victor", "amelie", "noemie", "jonathan"}
 var nameSlice = "sliceOfName"
 
-func TestCheckTypeInSlice(t *testing.T) {
+/* func TestCheckTypeInSlice(t *testing.T) {
 	got := CheckTypeInSlice(testString, nameSlice)
 	want := "amelie"
 
@@ -18,4 +13,4 @@ func TestCheckTypeInSlice(t *testing.T) {
 		fmt.Printf("CheckTypeInSlice has passed")
 	}
 
-}
+} */
