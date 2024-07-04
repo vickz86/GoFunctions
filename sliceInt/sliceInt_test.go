@@ -78,12 +78,25 @@ func TestKeepFirstLastSlice(t *testing.T) {
 func TestSumSlice(t *testing.T) {
 	var test = []int{2, 3, 4}
 	got := SumSlice(test)
-	want := 10
+	want := 9
 
 	if got == want {
 		fmt.Println("SumSlice has passed")
 	} else {
-		fmt.Printf("error ,want %v , got %v", want, got)
+		fmt.Printf("error ,want %v , got %v\n", want, got)
+	}
+
+}
+
+func TestHighestValueIndex(t *testing.T) {
+	var test = []int{2, 3, 4, 4, 8, 5, 2, 12, 3}
+	gotVal, gotIn := HighestValueIndex(test)
+	wantVal, wantIn := 12, 7
+
+	if gotVal == wantVal && gotIn == wantIn {
+		fmt.Println("HighestValueIndex has passed")
+	} else {
+		fmt.Printf("error HighestValueIndex want %v , got %v and want %v , got %v", wantVal, gotVal, wantIn, gotIn)
 	}
 
 }

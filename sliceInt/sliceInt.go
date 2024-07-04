@@ -3,6 +3,7 @@ package sliceint
 import (
 	"fmt"
 	"math"
+	"slices"
 )
 
 // DisplaySliceInt: if len(sliceInt)<fulldisplay display all , else  display first ,last and middle
@@ -253,5 +254,30 @@ func SumSlice(sliceInt []int) int {
 		sum += nb
 	}
 	return sum
+
+}
+
+// IndexHigherVal : return highest valie and index (highestValue index)
+// if multiple highest value , return first index of highest value
+func HighestValueIndex(sliceint []int) (int, int) {
+	//variable
+	var highest int
+	var index int
+
+	// loop
+	for index, intV := range sliceint {
+		if index == 0 {
+			highest = intV
+		} else {
+			if intV > highest {
+				highest = intV
+
+			}
+		}
+	}
+
+	index = slices.Index(sliceint, highest)
+
+	return highest, index
 
 }
