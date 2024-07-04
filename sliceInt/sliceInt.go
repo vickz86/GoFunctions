@@ -67,6 +67,30 @@ func AddToSliceUnder(theSlice []int, maxVal int, addToWhat string) []int {
 	return theSlice
 }
 
+// CreateSliceFixNumber : create a slice of Int of fix number and return it
+func CreateSliceFixNumber(fixNumber int) []int {
+	var newSlice []int
+	loop := 1
+	var addNb int
+
+	//loop and add
+	for {
+		fmt.Printf("type the %d number:", loop)
+		fmt.Scan(&addNb)
+		newSlice = append(newSlice, addNb)
+
+		//increment counter
+		loop++
+
+		//check if reach fixNumber and return
+		if loop == fixNumber {
+			return newSlice
+		}
+
+	}
+
+}
+
 // AverageSliceInt : get the average of the slice , return float with .1 precision
 func AverageSliceInt(theSlice []int) float64 {
 	//variable
