@@ -84,9 +84,6 @@ func CreateSliceFixNumber(fixNumber int) []int {
 			return newSlice
 		}
 
-		//TEST
-		fmt.Println("test")
-
 		//increment counter
 		loop++
 
