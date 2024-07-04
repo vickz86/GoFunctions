@@ -79,13 +79,13 @@ func CreateSliceFixNumber(fixNumber int) []int {
 		fmt.Scan(&addNb)
 		newSlice = append(newSlice, addNb)
 
-		//increment counter
-		loop++
-
 		//check if reach fixNumber and return
 		if loop == fixNumber {
 			return newSlice
 		}
+
+		//increment counter
+		loop++
 
 	}
 
