@@ -278,6 +278,6 @@ func HighestValueIndex(sliceint []int) (int, int) {
 
 	index = slices.Index(sliceint, highest)
 
-	return highest, index
+	return index, highest
 
 }
