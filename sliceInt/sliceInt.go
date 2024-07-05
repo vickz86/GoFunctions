@@ -257,7 +257,7 @@ func SumSlice(sliceInt []int) int {
 
 }
 
-// IndexHigherVal : return highest valie and index (highestValue index)
+// IndexHigherVal : return index and HighestValue (index HighestValue)
 // if multiple highest value , return first index of highest value
 func HighestValueIndex(sliceint []int) (int, int) {
 	//variable
