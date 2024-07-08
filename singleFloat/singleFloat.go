@@ -1,7 +1,6 @@
 package singlefloat
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -11,16 +10,12 @@ import (
 func RoundSingleFloat(toRound float64, deciNb int) float64 {
 	//variable
 
-	switch deciNb {
-	case 0:
-		return math.Round(toRound)
-	case 1:
-		toRound *= 10
-		toRound = math.Round(toRound)
-		return toRound / 10
-	default:
-		fmt.Println("error , decimal number not correct")
-		return 0.0
-	}
+	newVal := toRound * math.Pow10(deciNb)
+	// fmt.Println(newVal)
+	rounded := math.Round(newVal)
+	// fmt.Println(rounded)
+	final := rounded / math.Pow10(deciNb)
+	// fmt.Println(final)
 
+	return final
 }
