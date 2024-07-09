@@ -19,3 +19,10 @@ func RoundSingleFloat(toRound float64, deciNb int) float64 {
 
 	return final
 }
+
+// Compare2Float : substract float2 to float 1
+// return the difference
+func Compare2Float(float1, float2 float64) float64 {
+	return float1 - float2
+
+}
