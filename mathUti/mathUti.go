@@ -47,3 +47,5 @@ func PercVarWithLastAndOther(slicefloat []float64, ToCompareWith int) (float64, 
 	return difVal, nil
 
 }
+
+
