@@ -8,6 +8,30 @@ import (
 	sliceint "github.com/vickz86/GoFunctions/sliceInt"
 )
 
+// return an int , from a question based on a min and a max value
+func IntFromString(theString string,minVal,maxVal int)int{
+	var answer int
+
+	for {
+		fmt.Println(theString)
+
+		_,err :=fmt.Scan(&answer)
+		if err!= nil{
+			fmt.Println("couldnt get your answer, try again!")
+			continue
+		}
+		
+		if answer<minVal || answer>maxVal{
+			fmt.Printf("answer is not in the correct range , should be between %v and %v",minVal,maxVal)
+			continue
+		}
+
+		break
+	}
+	return answer
+}
+
+
 // SliceIndexConnectedNumbers : return first and last index of connected letter => ab101ab54 =[2,4]
 func SliceIndexConnectedNumbers(theString string) []int {
 	//variable

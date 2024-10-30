@@ -6,6 +6,10 @@ import (
 	"testing"
 )
 
+func TestIntFromString(t *testing.T) {
+	
+}
+
 func TestSliceIndexConnectedNumbers(t *testing.T) {
 	// var theString = "hello128baby545mama"
 	var theString2 = "ba9876cd456"
