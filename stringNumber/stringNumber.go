@@ -22,7 +22,7 @@ func IntFromString(theString string,minVal,maxVal int)int{
 		}
 		
 		if answer<minVal || answer>maxVal{
-			fmt.Printf("answer is not in the correct range , should be between %v and %v",minVal,maxVal)
+			fmt.Printf("answer is not in the correct range , should be between %v and %v\n",minVal,maxVal)
 			continue
 		}
 
