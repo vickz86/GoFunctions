@@ -2,37 +2,43 @@ package utifile
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"log"
 	"os"
 )
 
-// SliceStringFromFile : return a slice of string from a file name
+// SliceStringFromFile : return a slice of strings from a file name
 func SliceStringFromFile(fileName string) ([]string, error) {
-	//var to return
+	// Variable to hold the lines read from the file
 	var returnSlice []string
 
-	//open file
+	// Open the file
 	theFile, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer theFile.Close()
 
-	//create a scanner
+	// Create a scanner
 	newScanner := bufio.NewScanner(theFile)
 
-	//for each line of the scanner
+	// Read each line of the file
 	for newScanner.Scan() {
 		returnSlice = append(returnSlice, newScanner.Text())
 	}
 
+	// Check if file is empty
+	if len(returnSlice) == 0 {
+		return nil, errors.New("file is empty")
+	}
+
+	// Check for any errors during scanning
 	if err := newScanner.Err(); err != nil {
 		return nil, err
 	}
 
 	return returnSlice, nil
-
 }
 
 
