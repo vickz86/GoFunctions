@@ -6,6 +6,7 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // convert an input of type hh.mm.ss into either "xxxs" or an int xxx
@@ -45,4 +46,20 @@ func StringToSecond(timeString string) (string, int,error) {
     outString := strconv.Itoa(totalSecond)+"s"
     
     return outString,totalSecond,nil
+}
+
+
+// change the year of a time.Time , 0 set to current year , other to add a year
+func ChangeYear(oldDate time.Time, changeYear int) time.Time {
+    // If changeYear is 0, set the year to the current year
+    if changeYear == 0 {
+        currentYear := time.Now().Year()
+        yearDifference := currentYear - oldDate.Year()
+        
+        // Adjust the year of oldDate to the current year
+        return oldDate.AddDate(yearDifference, 0, 0)
+    } 
+
+    // Otherwise, add or subtract years based on changeYear
+    return oldDate.AddDate(changeYear, 0, 0)
 }
