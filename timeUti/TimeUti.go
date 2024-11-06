@@ -63,3 +63,16 @@ func ChangeYear(oldDate time.Time, changeYear int) time.Time {
     // Otherwise, add or subtract years based on changeYear
     return oldDate.AddDate(changeYear, 0, 0)
 }
+
+
+// Convert a time.Duration to numbers of days , rounded to 1
+func DurationToDays(theDur time.Duration) int{
+
+    //Get the number of hours in theDur
+    hours := theDur.Hours()
+
+    // convert the hours to number of days
+    nbDay := hours/24.0
+
+    return int(math.Round(nbDay))
+}
